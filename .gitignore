@@ -6,3 +6,7 @@
 *.lst
 *.vcd
 *.gtkw
+caravel/
+dependencies/
+venv/
+
