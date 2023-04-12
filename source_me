@@ -1,0 +1,10 @@
+#!/bin/bash
+
+export OPENLANE_ROOT=/opt/openlane
+export OPENLANE_PDK=/opt/dk_volare
+export PDK_ROOT=/opt/dk_volare
+export PDK=sky130A
+# export PDK=gf180mcuC
+
+# source ./openlane-env/bin/activate
+
