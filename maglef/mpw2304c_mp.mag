@@ -1,0 +1,12 @@
+magic
+tech sky130A
+timestamp 0
+<< properties >>
+string FIXED_BBOX 0 0 0 0
+string LEFclass BLOCK
+string LEFview TRUE
+string GDS_END 52503030
+string GDS_FILE /home/mpotereau/DigitalFlowTest/mpw2304c_mp/openlane/mpw2304c_mp/runs/23_04_13_12_11/results/signoff/mpw2304c_mp.magic.gds
+string GDS_START 689224
+<< end >>
+

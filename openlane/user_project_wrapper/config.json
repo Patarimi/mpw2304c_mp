@@ -13,15 +13,14 @@
     "MAGIC_DEF_LABELS": 0,
     "VERILOG_FILES_BLACKBOX": [
         "dir::../../verilog/rtl/defines.v",
-        "dir::../../verilog/rtl/mpw230c_mp.v"
+        "dir::../../verilog/rtl/mpw2304c_mp.v"
     ],
-    "EXTRA_LEFS": "dir::../../lef/mpw230c_mp.lef",
-    "EXTRA_GDS_FILES": "dir::../../gds/mpw230c_mp.gds",
+    "EXTRA_LEFS": "dir::../../lef/mpw2304c_mp.lef",
+    "EXTRA_GDS_FILES": "dir::../../gds/mpw2304c_mp.gds",
     "BASE_SDC_FILE": "dir::base_user_project_wrapper.sdc",
     "IO_SYNC": 0,
     "FP_PDN_CHECK_NODES": 0,
     "SYNTH_ELABORATE_ONLY": 1,
-    "PL_RANDOM_GLB_PLACEMENT": 1,
     "PL_RESIZER_DESIGN_OPTIMIZATIONS": 0,
     "PL_RESIZER_TIMING_OPTIMIZATIONS": 0,
     "PL_RESIZER_BUFFER_INPUT_PORTS": 0,
