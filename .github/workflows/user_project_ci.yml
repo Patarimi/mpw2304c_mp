@@ -89,6 +89,7 @@ jobs:
 
       - name: Harden using Openlane
         run: |
+          git submodule update --init
           make mpw2304c_mp
           make user_project_wrapper
 
@@ -180,7 +181,7 @@ jobs:
       - name: Harden using Openlane
         run: |
           git submodule update --init
-          make user_proj_example
+          make mpw2304c_mp
           make user_project_wrapper
 
       - name: run precheck
