@@ -9,4 +9,8 @@
 caravel/
 dependencies/
 venv/
+mgmt_core_wrapper/
+sdc/
+sdf/
+spef/
 

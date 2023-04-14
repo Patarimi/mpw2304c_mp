@@ -1,11 +1,11 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1681309694
+timestamp 1681456856
 << obsli1 >>
 rect 13104 5159 570808 352809
 << obsm1 >>
-rect 382 8 583634 352840
+rect 566 8 583634 378208
 << metal2 >>
 rect 8086 703520 8198 704960
 rect 24278 703520 24390 704960
@@ -538,8 +538,7 @@ rect 580970 -960 581082 480
 rect 582166 -960 582278 480
 rect 583362 -960 583474 480
 << obsm2 >>
-rect 388 536 583628 371385
-rect 388 2 486 536
+rect 572 536 583628 378457
 rect 710 2 1590 536
 rect 1814 2 2786 536
 rect 3010 2 3982 536
@@ -1143,7 +1142,9 @@ rect -960 19260 480 19500
 rect -960 6340 480 6580
 rect 583520 6476 584960 6716
 << obsm3 >>
-rect 560 371148 583520 371381
+rect 480 378220 583440 378453
+rect 480 371548 583520 378220
+rect 560 371148 583520 371548
 rect 480 365292 583520 371148
 rect 480 364892 583440 365292
 rect 480 358628 583520 364892
@@ -3610,8 +3611,8 @@ port 645 nsew signal input
 string FIXED_BBOX 0 0 584000 704000
 string LEFclass BLOCK
 string LEFview TRUE
-string GDS_END 54178330
-string GDS_FILE /home/mpotereau/DigitalFlowTest/mpw2304c_mp/openlane/user_project_wrapper/runs/23_04_12_16_21/results/signoff/user_project_wrapper.magic.gds
-string GDS_START 52551708
+string GDS_END 54133916
+string GDS_FILE /home/mpotereau/DigitalFlowTest/mpw2304c_mp/openlane/user_project_wrapper/runs/23_04_14_09_14/results/signoff/user_project_wrapper.magic.gds
+string GDS_START 52498332
 << end >>
 
