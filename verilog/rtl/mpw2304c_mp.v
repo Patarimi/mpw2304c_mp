@@ -31,7 +31,7 @@ module mpw2304c_mp(
     // IRQ
     output [2:0] irq
 );
-    wire clk;
+    wire clk, valid;
     wire rst;
 
     wire [15:0] wdata;
@@ -57,7 +57,7 @@ module mpw2304c_mp(
 	sdm_2o #(16, 6) dac(
 		.clk(clk),
         .rst_n(rst),
-        .din(io_in), 
+        .din(io_in[16:1]),
         .dout(io_out[0])
 	);
 	
