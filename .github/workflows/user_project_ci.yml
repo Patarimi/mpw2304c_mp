@@ -62,7 +62,7 @@ jobs:
       - name: Export PDK CONF
         run: |
           echo "PDK_ROOT=/home/runner/work/pdk" >> $GITHUB_ENV
-          echo "PDK=${{ matrix.PDK }}"
+          echo "PDK=${{ matrix.PDK }}" >> $GITHUB_ENV
           echo "PDKPATH=/home/runner/work/pdk/$PDK" >> $GITHUB_ENV
 
       - name: Export OPENLANE ROOT
@@ -99,7 +99,6 @@ jobs:
           export PRECHECK_ROOT=$INPUT_DIRECTORY/mpw_precheck
           export OUTPUT_DIRECTORY=$INPUT_DIRECTORY/mpw_precheck_result
           export OUTPUT=$OUTPUT_DIRECTORY/logs/precheck.log
-          export PDKPATH=$PDK_ROOT/sky130A
 
           git clone --depth=1 -b mpw-7d https://github.com/efabless/mpw_precheck.git
 
