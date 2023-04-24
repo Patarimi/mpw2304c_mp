@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1681397931
+timestamp 1682088348
 << obsli1 >>
 rect 1104 2159 558808 349809
 << obsm1 >>
@@ -2357,8 +2357,8 @@ port 546 nsew signal input
 string FIXED_BBOX 0 0 560000 352000
 string LEFclass BLOCK
 string LEFview TRUE
-string GDS_END 52498272
-string GDS_FILE /home/mpotereau/DigitalFlowTest/mpw2304c_mp/openlane/mpw2304c_mp/runs/23_04_13_16_28/results/signoff/mpw2304c_mp.magic.gds
-string GDS_START 688930
+string GDS_END 52748704
+string GDS_FILE /home/mpotereau/DigitalFlowTest/mpw2304c_mp/openlane/mpw2304c_mp/runs/23_04_21_16_15/results/signoff/mpw2304c_mp.magic.gds
+string GDS_START 709446
 << end >>
 
