@@ -32,9 +32,9 @@ module mpw2304c_mp(
     output [2:0] irq
 );
     wire clk, valid;
-    wire rst;
+    wire rst, dout;
 
-    wire [15:0] wdata;
+    wire [15:0] wdata, count, din;
 
     wire [3:0] wstrb;
     wire [31:0] la_write;
@@ -46,6 +46,9 @@ module mpw2304c_mp(
 
     // IO
     assign io_oeb = {(15){rst}};
+    assign din = io_in[16:1];
+    assign dout = io_out[0];
+    
 
     // IRQ
     assign irq = 3'b000;	// Unused
@@ -57,11 +60,16 @@ module mpw2304c_mp(
 	sdm_2o #(16, 6) dac(
 		.clk(clk),
         .rst_n(rst),
-        .din(io_in[16:1]),
-        .dout(io_out[0])
+        .din(count),
+        .dout(dout)
 	);
 	
-	
-
+	counter #(16) integrator(
+		.clk(clk),
+		.reset(~rst),
+		.incr(din),
+		.count(count)
+	);
 endmodule
 `default_nettype wire
+
