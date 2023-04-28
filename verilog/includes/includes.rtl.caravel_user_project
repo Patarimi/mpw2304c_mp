@@ -3,4 +3,4 @@
 -v $(USER_PROJECT_VERILOG)/rtl/mpw2304c_mp.v
 -v $(USER_PROJECT_VERILOG)/rtl_core/sigma_delta_2/sigma_delta_2.v
 -v $(USER_PROJECT_VERILOG)/rtl_core/counter/counter.v
- 
+-v $(USER_PROJECT_VERILOG)/rtl_core/cordic/cordic.v

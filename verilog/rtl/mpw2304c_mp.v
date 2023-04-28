@@ -34,10 +34,12 @@ module mpw2304c_mp(
     wire clk, valid;
     wire rst, dout;
 
-    wire [15:0] wdata, count, din;
+    wire [15:0] wdata, count, din, sin_d, cos_d;
 
     wire [3:0] wstrb;
     wire [31:0] la_write;
+    
+    localparam BITS = 16;
 
     // WB MI A
     assign valid = wbs_cyc_i && wbs_stb_i; 
@@ -57,18 +59,28 @@ module mpw2304c_mp(
     assign clk = (~la_oenb[64]) ? la_data_in[64]: wb_clk_i;
     assign rst = (~la_oenb[65]) ? la_data_in[65]: wb_rst_i;
 
-	sdm_2o #(16, 6) dac(
+	sdm_2o #(BITS, 6) dac(
 		.clk(clk),
         .rst_n(rst),
-        .din(count),
+        .din(sin_d),
         .dout(dout)
 	);
 	
-	counter #(16) integrator(
+	counter #(BITS) integrator(
 		.clk(clk),
 		.reset(~rst),
 		.incr(din),
 		.count(count)
+	);
+	
+	wire signed [BITS:0] rescale;
+	
+	assign rescale = 17'b01100100100010000*(count >> 1) - 17'b01100100100010000;
+	
+	cordic_pipelined #(BITS, 14) cord_val(
+		.angle(rescale),
+		.sinus(sin_d),
+		.clk(clk)		
 	);
 endmodule
 `default_nettype wire
