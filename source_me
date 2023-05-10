@@ -6,5 +6,6 @@ export PDK_ROOT=/opt/dk_volare
 export PDK=sky130A
 # export PDK=gf180mcuC
 
-# source ./openlane-env/bin/activate
+conda deactivate
+source ./venv/bin/activate
 
