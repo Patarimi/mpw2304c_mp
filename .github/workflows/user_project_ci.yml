@@ -63,7 +63,7 @@ jobs:
         run: |
           echo "PDK_ROOT=/home/runner/work/pdk" >> $GITHUB_ENV
           echo "PDK=${{ matrix.pdk }}" >> $GITHUB_ENV
-          echo "PDKPATH=/home/runner/work/pdk/$PDK" >> $GITHUB_ENV
+          echo "PDKPATH=/home/runner/work/pdk/${{ matrix.pdk }}" >> $GITHUB_ENV
 
       - name: Export OPENLANE ROOT
         run: echo "OPENLANE_ROOT=/home/runner/work/caravel_user_project/openlane" >> $GITHUB_ENV
