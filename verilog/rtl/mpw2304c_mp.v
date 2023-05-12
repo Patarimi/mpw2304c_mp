@@ -24,15 +24,15 @@ module mpw2304c_mp(
     input  [127:0] la_oenb,
 
     // IOs
-    input  [16:0] io_in,
-    output [16:0] io_out,
-    output [16:0] io_oeb,
+    input  [17:0] io_in,
+    output [17:0] io_out,
+    output [17:0] io_oeb,
 
     // IRQ
     output [2:0] irq
 );
-    wire clk, valid;
-    wire rst, dout;
+    wire clk, valid, clk_sdm;
+    wire rst, dout_cos, dout_sin;
 
     wire [15:0] wdata, count, din, sin_d, cos_d;
 
@@ -47,9 +47,10 @@ module mpw2304c_mp(
     assign wdata = wbs_dat_i[15:0];
 
     // IO
-    assign io_oeb = {(15){rst}};
-    assign din = io_in[16:1];
-    assign dout = io_out[0];
+    assign io_oeb = {(17){rst}};
+    assign din = io_in[17:2];
+    assign dout_cos = io_out[0];
+    assign dout_sin = io_out[1];
     
 
     // IRQ
@@ -57,14 +58,23 @@ module mpw2304c_mp(
 
     // LA
     assign clk = (~la_oenb[64]) ? la_data_in[64]: wb_clk_i;
+    assign clk_sdm = io_in[0];
     assign rst = (~la_oenb[65]) ? la_data_in[65]: wb_rst_i;
 
-	sdm_2o #(BITS, 6) dac(
-		.clk(clk),
+	sdm_2o #(BITS, 6) dac_sin(
+		.clk(clk_sdm),
         .rst_n(rst),
         .din(sin_d),
-        .dout(dout)
+        .dout(dout_sin)
 	);
+	
+	sdm_2o #(BITS, 6) dac_cos(
+		.clk(clk_sdm),
+        .rst_n(rst),
+        .din(cos_d),
+        .dout(dout_cos)
+	);
+	
 	
 	counter #(BITS) integrator(
 		.clk(clk),
@@ -80,6 +90,7 @@ module mpw2304c_mp(
 	cordic_pipelined #(BITS, 14) cord_val(
 		.angle(rescale),
 		.sinus(sin_d),
+		.cosinus(cos_d),
 		.clk(clk)		
 	);
 endmodule
