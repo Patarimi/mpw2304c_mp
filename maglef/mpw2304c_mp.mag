@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1683820826
+timestamp 1684157929
 << obsli1 >>
 rect 1104 2159 558808 349809
 << obsm1 >>
@@ -1146,7 +1146,11 @@ rect 526448 2128 526768 349840
 rect 541808 2128 542128 349840
 rect 557168 2128 557488 349840
 << obsm4 >>
-rect 362907 113867 362973 117061
+rect 290963 111827 295968 164933
+rect 296448 111827 311328 164933
+rect 311808 111827 326688 164933
+rect 327168 111827 342048 164933
+rect 342528 111827 345677 164933
 << labels >>
 rlabel metal3 s 559200 7896 560000 8016 6 io_in[0]
 port 1 nsew signal input
@@ -2320,8 +2324,8 @@ port 549 nsew signal input
 string FIXED_BBOX 0 0 560000 352000
 string LEFclass BLOCK
 string LEFview TRUE
-string GDS_END 60726064
-string GDS_FILE /home/mpotereau/DigitalFlowTest/mpw2304c_mp/openlane/mpw2304c_mp/runs/23_05_11_17_26/results/signoff/mpw2304c_mp.magic.gds
-string GDS_START 1622358
+string GDS_END 60597918
+string GDS_FILE /home/mpotereau/DigitalFlowTest/mpw2304c_mp/openlane/mpw2304c_mp/runs/23_05_15_15_04/results/signoff/mpw2304c_mp.magic.gds
+string GDS_START 1620244
 << end >>
 

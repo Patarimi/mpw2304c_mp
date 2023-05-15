@@ -58,7 +58,7 @@ module mpw2304c_mp(
 
     // LA
     assign clk = (~la_oenb[64]) ? la_data_in[64]: wb_clk_i;
-    assign clk_sdm = io_in[0];
+    assign clk_sdm = clk;
     assign rst = (~la_oenb[65]) ? la_data_in[65]: wb_rst_i;
 
 	sdm_2o #(BITS, 6) dac_sin(
@@ -75,7 +75,6 @@ module mpw2304c_mp(
         .dout(dout_cos)
 	);
 	
-	
 	counter #(BITS) integrator(
 		.clk(clk),
 		.reset(~rst),
@@ -84,10 +83,9 @@ module mpw2304c_mp(
 	);
 	
 	wire signed [BITS:0] rescale;
-	
 	assign rescale = 17'b01100100100010000*(count >> 1) - 17'b01100100100010000;
 	
-	cordic_pipelined #(BITS, 14) cord_val(
+	cordic_pipelined #(BITS, BITS-1) cord_val(
 		.angle(rescale),
 		.sinus(sin_d),
 		.cosinus(cos_d),
