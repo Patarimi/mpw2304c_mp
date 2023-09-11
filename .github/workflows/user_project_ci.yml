@@ -11,7 +11,7 @@ jobs:
   pdk:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -51,7 +51,7 @@ jobs:
         pdk: ["sky130A", "sky130B"]      
     needs: [pdk]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
