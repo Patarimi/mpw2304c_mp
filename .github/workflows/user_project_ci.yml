@@ -17,7 +17,7 @@ jobs:
         uses: docker/setup-qemu-action@v2
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+        uses: docker/setup-buildx-action@v3
 
       - name: Export PDK ROOT
         run: echo "PDK_ROOT=/home/runner/work/pdk" >> $GITHUB_ENV
@@ -57,7 +57,7 @@ jobs:
         uses: docker/setup-qemu-action@v2
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+        uses: docker/setup-buildx-action@v3
 
       - name: Export PDK VARIABLES
         run: |
